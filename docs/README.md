@@ -35,3 +35,7 @@ Widget B,WIDGETB-002
 - `0` = centered. Negative X = left, positive X = right. Negative Y = down, positive Y = up.
 - Set page dimensions (e.g. 11 x 4) before exporting
 - Print at **Actual size / 100%** (no scaling) for accurate measurements
+
+## Disclaimer
+
+Provided **as-is** under the MIT license, with no warranty. Always verify generated labels and barcodes against your label stock, printer, and scanner before any production use.
