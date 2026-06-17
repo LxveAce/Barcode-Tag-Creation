@@ -8,7 +8,7 @@ Only the latest commit on the default branch is supported with security fixes.
 
 Please **do not** open a public GitHub issue for security vulnerabilities.
 
-Instead, email **extrafadexd@gmail.com** with:
+Instead, email **lxveace@proton.me** with:
 
 - A description of the vulnerability
 - Steps to reproduce
