@@ -21,6 +21,10 @@ python app.py
 
 Or double-click `run_gui.bat`.
 
+## Download
+
+Prefer a prebuilt binary? The latest packaged build is on the [Releases page](https://github.com/LxveAce/Barcode-Tag-Creation/releases) — download `BarcodeLabeler.exe` from the latest release and run it directly on Windows, no Python install required.
+
 ## CSV Format
 
 ```csv
@@ -28,6 +32,8 @@ item_name,barcode_value
 Widget A,WIDGETA-001
 Widget B,WIDGETB-002
 ```
+
+Excel workbooks (`.xlsx`) work the same way — use the same two columns as the CSV example.
 
 ## Layout
 
