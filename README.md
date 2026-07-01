@@ -22,6 +22,16 @@ This is the predecessor to Tag Studio — a focused, single-purpose label genera
 
 The latest packaged build is published on the [Releases page](https://github.com/LxveAce/Barcode-Tag-Creation/releases). Download `BarcodeLabeler.exe` from the latest release and run it directly on Windows — no Python install required.
 
+Verify your download before running it. The SHA-256 checksum of `BarcodeLabeler.exe` for **v1.0.0** is:
+
+`0080a2e6616d8591bc45ce04236fb0173357412a21a8f0440611dc21ce7aa345`
+
+On Windows, compute the hash and confirm it matches:
+
+```powershell
+Get-FileHash BarcodeLabeler.exe -Algorithm SHA256
+```
+
 ## CSV Format
 
 ```csv
