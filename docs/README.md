@@ -1,7 +1,7 @@
-# Barcode Labeler (Code 39) - Vector PDF
+# Barcode Labeler (Code 128B) - Vector PDF
 
 Python GUI to generate **measurement-accurate, vector** PDF labels:
-- Text + Code 39 barcode per page
+- Text + Code 128B barcode per page
 - Data sourced from **Excel** or **CSV**
 - All positioning is center-anchored with inch offsets
 
