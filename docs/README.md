@@ -1,31 +1,18 @@
-# Barcode Labeler (Code 128B) - Vector PDF
+# Barcode Label Generator — usage reference
 
-Python GUI to generate **measurement-accurate, vector** PDF labels:
-- Text + Code 128B barcode per page
+A Windows desktop app that generates measurement-accurate, vector PDF labels:
+
+- Text caption + Code 128B barcode per page
 - Data sourced from **Excel** or **CSV**
 - All positioning is center-anchored with inch offsets
 
-## Setup
-
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
+This repo ships the packaged app; the app source isn't published here. See the top-level [README](../README.md) for the full overview.
 
 ## Run
 
-```bash
-python app.py
-```
+Download `BarcodeLabeler.exe` from the [latest release](https://github.com/LxveAce/Barcode-Tag-Creation/releases/latest) and run it on Windows — no Python install required. Verify the SHA-256 first (checksum in the top-level README).
 
-Or double-click `run_gui.bat`.
-
-## Download
-
-Prefer a prebuilt binary? The latest packaged build is on the [Releases page](https://github.com/LxveAce/Barcode-Tag-Creation/releases) — download `BarcodeLabeler.exe` from the latest release and run it directly on Windows, no Python install required.
-
-## CSV Format
+## CSV format
 
 ```csv
 item_name,barcode_value
@@ -33,7 +20,7 @@ Widget A,WIDGETA-001
 Widget B,WIDGETB-002
 ```
 
-Excel workbooks (`.xlsx`) work the same way — use the same two columns as the CSV example.
+Excel workbooks (`.xlsx`) work the same way — use the same two columns as the CSV example. Code 128B only encodes ASCII 32–127, so keep `barcode_value` within that range.
 
 ## Layout
 
@@ -41,6 +28,10 @@ Excel workbooks (`.xlsx`) work the same way — use the same two columns as the 
 - `0` = centered. Negative X = left, positive X = right. Negative Y = down, positive Y = up.
 - Set page dimensions (e.g. 11 x 4) before exporting
 - Print at **Actual size / 100%** (no scaling) for accurate measurements
+
+## More
+
+- [LABEL-TAG-ENGINEERING.md](LABEL-TAG-ENGINEERING.md) — general, reusable notes on symbology, coordinates, fonts, and verification.
 
 ## Disclaimer
 

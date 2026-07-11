@@ -1,38 +1,43 @@
-# Barcode Tag Creation
+# Barcode Label Generator
 
-A Windows desktop app for generating **measurement-accurate, vector** PDF labels with **Code 128B** barcodes. Built with Python and CustomTkinter, it pairs a text caption with a scannable barcode on each label and pulls label data straight from **Excel** or **CSV**.
+A Windows desktop app for making measurement-accurate, vector PDF labels with Code 128B barcodes. Point it at a spreadsheet and get one scannable label per page, sized to the exact inch.
 
-This is the predecessor to Tag Studio — a focused, single-purpose label generator rather than a full label suite.
-
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![CustomTkinter](https://img.shields.io/badge/GUI-CustomTkinter-2b6cb0)
-![Barcode](https://img.shields.io/badge/Barcode-Code%20128B-444)
+[![Release](https://img.shields.io/github/v/release/LxveAce/Barcode-Tag-Creation?label=release&color=2b6cb0)](https://github.com/LxveAce/Barcode-Tag-Creation/releases/latest)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+![GUI](https://img.shields.io/badge/GUI-CustomTkinter-2b6cb0)
+![PDF](https://img.shields.io/badge/PDF-ReportLab-444)
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
+[![License](https://img.shields.io/github/license/LxveAce/Barcode-Tag-Creation?color=green)](LICENSE)
+
+Each label pairs a text caption with a Code 128B barcode, and the label data comes straight from Excel or CSV. Everything is placed relative to the center of the page in inch offsets, so a label measures out exactly as designed when you print at 100%.
+
+This is the predecessor to Tag Studio — a single-purpose label generator rather than the full label suite. For the bigger toolkit, see [ExpertTags](https://experttags.com).
 
 ## Features
 
-- **Vector PDF output** — labels render as true vectors, so text and bars stay crisp at any print size.
-- **Code 128B barcodes** — one barcode plus a text caption per label/page.
-- **Excel or CSV input** — drive a batch of labels from a spreadsheet.
-- **Center-anchored layout** — every element is positioned relative to the page center using inch offsets, so labels measure out exactly as designed.
-- **Configurable page size** — set the page dimensions (for example, 11 x 4 inches) before exporting.
+- **Vector PDF output** — text and bars render as true vectors (ReportLab), so they stay crisp at any print size.
+- **Code 128B barcodes** — one barcode plus a text caption per label.
+- **Excel or CSV input** — drive a whole batch from a two-column spreadsheet.
+- **Center-anchored layout** — every element is positioned relative to the page center in inch offsets, so labels measure out exactly as designed.
+- **Configurable page size** — set the page dimensions (for example 11 x 4 inches) before exporting.
 
 ## Download
 
-The latest packaged build is published on the [Releases page](https://github.com/LxveAce/Barcode-Tag-Creation/releases). Download `BarcodeLabeler.exe` from the latest release and run it directly on Windows — no Python install required.
+Grab `BarcodeLabeler.exe` from the [latest release](https://github.com/LxveAce/Barcode-Tag-Creation/releases/latest) and run it on Windows — no Python install required.
 
-Verify your download before running it. The SHA-256 checksum of `BarcodeLabeler.exe` for **v1.0.0** is:
+The binary is unsigned, so Windows SmartScreen may warn on first run ("More info" → "Run anyway").
+
+Verify the download before running it. The SHA-256 of `BarcodeLabeler.exe` for **v1.0.0** is:
 
 `0080a2e6616d8591bc45ce04236fb0173357412a21a8f0440611dc21ce7aa345`
 
-On Windows, compute the hash and confirm it matches:
+Compute the hash on Windows and confirm it matches:
 
 ```powershell
 Get-FileHash BarcodeLabeler.exe -Algorithm SHA256
 ```
 
-## CSV Format
+## CSV format
 
 ```csv
 item_name,barcode_value
@@ -40,7 +45,9 @@ Widget A,WIDGETA-001
 Widget B,WIDGETB-002
 ```
 
-Each row produces one label: `item_name` becomes the caption and `barcode_value` is encoded as the Code 128B barcode. Excel workbooks follow the same two-column shape.
+Each row makes one label: `item_name` becomes the caption and `barcode_value` is encoded as the Code 128B barcode. Excel workbooks use the same two-column shape.
+
+Code 128B only encodes ASCII characters 32–127, so keep `barcode_value` within that range.
 
 ## Layout
 
@@ -49,17 +56,18 @@ Each row produces one label: `item_name` becomes the caption and `barcode_value`
 - Set the page dimensions before exporting.
 - Print at **Actual size / 100%** (no scaling) for accurate measurements.
 
+More build notes on symbology, coordinates, and verification are in [docs/LABEL-TAG-ENGINEERING.md](docs/LABEL-TAG-ENGINEERING.md).
+
 ## Security
 
-To report a security issue, see [SECURITY.md](../SECURITY.md). Please do not open a public issue for vulnerabilities.
+Please report security issues privately — see [SECURITY.md](SECURITY.md). Don't open a public issue for a vulnerability.
 
 ## License
 
-Released under the [MIT License](../LICENSE). Provided **as-is**, with no warranty. Always verify generated labels and barcodes against your label stock, printer, and scanner before any production use.
+Released under the [MIT License](LICENSE). Provided **as-is**, with no warranty. Always verify generated labels and barcodes against your label stock, printer, and scanner before any production use.
 
 ## Connect
 
-- **Discord:** [discord.gg/lxveace](https://discord.gg/lxveace) — questions, help, or to talk through this project
-- **GitHub:** [@LxveAce](https://github.com/LxveAce)
-- **Website:** [lxveace.com](https://lxveace.com)
-- **Project site:** [experttags.com](https://experttags.com)
+**Discord:** [discord.gg/lxvelabs](https://discord.gg/lxvelabs) · **GitHub:** [@LxveAce](https://github.com/LxveAce) · **Email:** LxveLabs@proton.me (business) · lxveace@proton.me (direct) · **Site:** [experttags.com](https://experttags.com)
+
+Part of the ExpertTags label toolkit · built by LxveAce
